@@ -1019,3 +1019,49 @@ body::before {
 .unit-card.disabled:hover::after {
   opacity: 0;
 }
+
+
+/* Footer Styles */
+/* Update the #app padding to make room for footer */
+#app {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-bottom: calc(var(--nav-h) + 80px); /* Increased from 20px to 80px */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer Styles - Fixed version */
+.footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: .2px;
+  margin-bottom: calc(var(--nav-h) + 2px); /* Add margin to clear bottom nav */
+  font-family: "Outfit", sans-serif;
+  font-size: 0.8rem;
+  color: rgba(200, 223, 247, 0.6);
+  border-top: 1px solid rgba(212, 168, 67, 0.2);
+  background: linear-gradient(180deg, rgba(7, 13, 26, 0.8), rgba(7, 13, 26, 0.95));
+  backdrop-filter: blur(10px);
+  width: 100%;
+  clear: both;
+}
+
+.footer p {
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.footer p a {
+  color: var(--gold2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer p a:hover {
+  color: var(--gold3);
+  text-decoration: underline;
+}
