@@ -11,7 +11,7 @@ const USER_CONFIG = {
   syllabusImages: {
     1: "m4/m4syllabus.jpeg",
     2: "mpmc/mpmcsyllabus.jpeg",
-    3: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%231f7a8c'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E💻 COMPUTER SCIENCE%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EAlgorithms, Data Structures, AI%3C/text%3E%3C/svg%3E",
+    3: "ac/acsyllabus.jpeg",
     4: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%238b5a2b'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📖 LITERATURE SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EPoetry, Prose, Drama%3C/text%3E%3C/svg%3E",
     5: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%234a5d23'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E🏛️ HISTORY SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EAncient, Medieval, Modern%3C/text%3E%3C/svg%3E",
     6: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%239c6e3e'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📊 ECONOMICS SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EMicro, Macro, Trade%3C/text%3E%3C/svg%3E",
@@ -34,11 +34,7 @@ const USER_CONFIG = {
       4: "mpmc/MPMC UNIT-5.pdf",
     },
     3: {
-      0: "",
-      1: "",
-      2: "",
-      3: "",
-      4: "",
+      0: "ac/ac 12345.pdf"
     },
     4: {
       0: "",
