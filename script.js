@@ -110,7 +110,7 @@ const SECTIONS = [
     icon: "cs",
     color: "#ffb450",
     subject: "AC",
-    units: ["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5"],
+    units: ["Unit:  1, 2, 3, 5 "],
   },
   {
     id: 4,
