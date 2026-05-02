@@ -970,3 +970,52 @@ body::before {
     font-size: 0.55rem;
   }
 }
+
+
+.open-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--gold);
+  background: rgba(212, 168, 67, 0.08);
+  border: 1px solid rgba(212, 168, 67, 0.15);
+  border-radius: 20px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.open-tag:hover {
+  background: rgba(212, 168, 67, 0.2);
+  transform: translateY(-1px);
+}
+
+.syllabus-info {
+  flex: 1;
+}
+
+
+
+/* Download notification animation */
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateX(-50%) scale(1); }
+  70% { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(0.9); visibility: hidden; }
+}
+
+/* Disabled unit card */
+.unit-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unit-card.disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.unit-card.disabled:hover::after {
+  opacity: 0;
+}
