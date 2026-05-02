@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Vault 3D</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <div id="app">
+        <div class="hero">
+            <div class="hero-badge"><span>● SECURE</span> Study Vault Pro</div>
+            <h1>Study Vault</h1>
+            <p class="hero-sub">Password Protected • Read-Only • 3D Interface</p>
+        </div>
+        <div id="panel"></div>
+    </div>
+
+    <!-- Bottom Nav -->
+    <nav id="bottom-nav"></nav>
+
+    <!-- Viewer -->
+    <div id="viewer" onclick="if(event.target===this)closeViewer()">
+        <div class="viewer-box">
+            <div class="viewer-hdr">
+                <span class="viewer-title" id="vTitle">Document</span>
+                <button class="close-btn" onclick="closeViewer()">✕</button>
+            </div>
+            <div class="viewer-body" id="vBody" oncontextmenu="return false"></div>
+            <div class="viewer-foot">🔒 Protected Mode — No Download / Print / Share</div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" onclick="if(event.target===this)closeModal()">
+        <div class="modal-box">
+            <div class="lock-icon">🔐</div>
+            <div class="modal-title">Locked Section</div>
+            <p class="modal-hint" id="mHint">Enter password to unlock</p>
+            <input class="pwd-input" type="password" id="pwdIn" placeholder="Enter password" autocomplete="off">
+            <button class="unlock-btn" onclick="tryUnlock()">Unlock →</button>
+            <div class="error-msg" id="errMsg"></div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
