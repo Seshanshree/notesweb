@@ -1,23 +1,3 @@
-
-// ╔══════════════════════════════════════════════════════════════════╗
-// ║          USER FILE CONFIGURATION — EDIT THIS SECTION           ║
-// ║  Add your own syllabus images and PDF file paths here          ║
-// ╚══════════════════════════════════════════════════════════════════╝
-//
-//  HOW TO ADD FILES:
-//  ─────────────────────────────────────────────────────────────────
-//  • syllabusImages  → one image per section (1 to 6)
-//    - Use a relative path : "folder/syllabus.jpg"
-//    - Use an absolute URL : "https://example.com/img.png"
-//    - Use a data URL      : "data:image/png;base64,..."
-//
-//  • pdfFiles        → 5 PDFs per section  (unitIndex 0 – 4)
-//    - Use a relative path : "Section1/unit1.pdf"
-//    - Use an absolute URL : "https://example.com/file.pdf"
-//    - Keep the HTML file in the SAME folder as your PDF files
-//      so relative paths resolve correctly in a browser.
-//  ─────────────────────────────────────────────────────────────────
-
 const USER_CONFIG = {
 
   // ── SYLLABUS IMAGES (one per section) ──────────────────────────
@@ -32,51 +12,45 @@ const USER_CONFIG = {
 
   // ── PDF FILES (5 units per section, unitIndex 0 = Unit 1) ──────
   pdfFiles: {
-    // ── Section 1 : Mathematics ─────────────────────────────────
     1: {
-      0: "m4/unit1.pdf",                                                              
-      1: "m4/unit2.pdf",                                               
-      2: "m4/unit3,4,5.pdf",                 
+      0: "m4/unit1.pdf",
+      1: "m4/unit2.pdf",
+      2: "m4/unit3,4,5.pdf",
     },
-    // ── Section 2 : Physics ─────────────────────────────────────
     2: {
-      0: "mpmc/MPMC unit-1.pdf",          
-      1: "mpmc/MPMC UNIT-2.pdf",                                              
-      2: "mpmc/MPMC unit-3.pdf",             
-      3: "mpmc/MPMC unit-4.pdf",            
-      4: "mpmc/MPMC UNIT-5.pdf"                
+      0: "mpmc/MPMC unit-1.pdf",
+      1: "mpmc/MPMC UNIT-2.pdf",
+      2: "mpmc/MPMC unit-3.pdf",
+      3: "mpmc/MPMC unit-4.pdf",
+      4: "mpmc/MPMC UNIT-5.pdf"
     },
-    // ── Section 3 : Computer Science ────────────────────────────
     3: {
-      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",          // Unit 1
-      1: "https://www.orimi.com/pdf-test.pdf",                                                // Unit 2
-      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",              // Unit 3
-      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",            // Unit 4
-      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"                   // Unit 5
+      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      1: "https://www.orimi.com/pdf-test.pdf",
+      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
+      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
+      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"
     },
-    // ── Section 4 : Literature ──────────────────────────────────
     4: {
-      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",          // Unit 1
-      1: "https://www.orimi.com/pdf-test.pdf",                                                // Unit 2
-      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",              // Unit 3
-      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",            // Unit 4
-      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"                   // Unit 5
+      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      1: "https://www.orimi.com/pdf-test.pdf",
+      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
+      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
+      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"
     },
-    // ── Section 5 : History ─────────────────────────────────────
     5: {
-      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",          // Unit 1
-      1: "https://www.orimi.com/pdf-test.pdf",                                                // Unit 2
-      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",              // Unit 3
-      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",            // Unit 4
-      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"                   // Unit 5
+      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      1: "https://www.orimi.com/pdf-test.pdf",
+      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
+      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
+      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"
     },
-    // ── Section 6 : Economics ───────────────────────────────────
     6: {
-      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",          // Unit 1
-      1: "https://www.orimi.com/pdf-test.pdf",                                                // Unit 2
-      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",              // Unit 3
-      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",            // Unit 4
-      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"                   // Unit 5
+      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      1: "https://www.orimi.com/pdf-test.pdf",
+      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
+      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
+      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"
     }
   }
 };
@@ -85,7 +59,6 @@ const USER_CONFIG = {
 // ║              END OF USER CONFIGURATION                         ║
 // ╚══════════════════════════════════════════════════════════════════╝
 
-// Helper: resolve PDF URL from USER_CONFIG (falls back to demo PDFs)
 const FALLBACK_PDFS = [
   "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
   "https://www.orimi.com/pdf-test.pdf",
@@ -93,13 +66,13 @@ const FALLBACK_PDFS = [
   "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
   "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf",
 ];
+
 function getConfiguredPdfUrl(sectionId, unitIndex) {
   return (USER_CONFIG.pdfFiles[sectionId] && USER_CONFIG.pdfFiles[sectionId][unitIndex])
     ? USER_CONFIG.pdfFiles[sectionId][unitIndex]
     : FALLBACK_PDFS[unitIndex % FALLBACK_PDFS.length];
 }
 
-// Helper: resolve syllabus image from USER_CONFIG (falls back to SVG placeholder)
 function getConfiguredSyllabusImage(sectionId) {
   if (USER_CONFIG.syllabusImages[sectionId]) return USER_CONFIG.syllabusImages[sectionId];
   return `data:image/svg+xml,${encodeURIComponent(
@@ -107,7 +80,6 @@ function getConfiguredSyllabusImage(sectionId) {
   )}`;
 }
 
-/* ── SECTION META ── */
 const SECTIONS = [
   { id:1, label:'M-4',    icon:'math',    color:'#6ab4ff', subject:'M-4',               units:['Unit 1','Unit 2','Unit 3, 4, 5'] },
   { id:2, label:'MPMC', icon:'physics', color:'#78dca0', subject:'MPMC',                units:['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'] },
@@ -122,18 +94,19 @@ const UNLOCKED = {};
 let activeSection = null;
 let pendingId = null;
 
-/* ── STARS ── */
+// Stars generation
 (function(){
   const c=document.getElementById('stars');
-  for(let i=0;i<80;i++){
-    const s=document.createElement('span');
-    const sz=Math.random()*2+0.5;
-    s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;--del:${Math.random()*4}s;`;
-    c.appendChild(s);
+  if(c){
+    for(let i=0;i<80;i++){
+      const s=document.createElement('span');
+      const sz=Math.random()*2+0.5;
+      s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;--del:${Math.random()*4}s;`;
+      c.appendChild(s);
+    }
   }
 })();
 
-/* ── NAV ICONS ── */
 const NAV_ICONS = {
   math:   `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
   physics:`<circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>`,
@@ -143,10 +116,11 @@ const NAV_ICONS = {
   econ:   `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
 };
 
-/* ── BUILD NAV ── */
 function buildNav(){
   const nav=document.getElementById('bottom-nav');
-  SECTIONS.forEach((s,i)=>{
+  if(!nav) return;
+  nav.innerHTML = '';
+  SECTIONS.forEach((s)=>{
     const btn=document.createElement('button');
     btn.className=`nav-btn s${s.id}`;
     btn.id=`nb${s.id}`;
@@ -161,39 +135,45 @@ function buildNav(){
   });
 }
 
-/* ── HANDLE NAV CLICK ── */
 function handleNav(id,e,btn){
-  /* ripple */
-  const r=document.createElement('div');r.className='ripple';
+  const r=document.createElement('div');
+  r.className='ripple';
   const rect=btn.getBoundingClientRect();
-  r.style.left=`${e.clientX-rect.left}px`;r.style.top=`${e.clientY-rect.top}px`;
-  btn.appendChild(r);setTimeout(()=>r.remove(),600);
+  r.style.left=`${e.clientX-rect.left}px`;
+  r.style.top=`${e.clientY-rect.top}px`;
+  btn.appendChild(r);
+  setTimeout(()=>r.remove(),600);
 
-  if(UNLOCKED[id]){showSection(id);}
-  else{openModal(id);}
+  if(UNLOCKED[id]){
+    showSection(id);
+  } else {
+    openModal(id);
+  }
 }
 
-/* ── MODAL ── */
 function openModal(id){
   pendingId=id;
   const s=SECTIONS[id-1];
+  if(!s) return;
   document.getElementById('mHint').textContent=`🔒 ${s.subject} — Enter password`;
   document.getElementById('pwdIn').value='';
   document.getElementById('errMsg').textContent='';
   document.getElementById('modal').classList.add('active');
   setTimeout(()=>document.getElementById('pwdIn').focus(),200);
 }
+
 function closeModal(){
-  document.getElementById('modal').classList.remove('active');
+  const modal = document.getElementById('modal');
+  if(modal) modal.classList.remove('active');
   pendingId=null;
 }
+
 function tryUnlock(){
   const pwd=document.getElementById('pwdIn').value;
   if(PASSWORDS[pendingId]===pwd){
     UNLOCKED[pendingId]=true;
-    /* remove badge */
     const badge=document.querySelector(`#nb${pendingId} .nav-badge`);
-    if(badge)badge.remove();
+    if(badge) badge.remove();
     closeModal();
     showSection(pendingId);
   } else {
@@ -202,116 +182,182 @@ function tryUnlock(){
     document.getElementById('pwdIn').focus();
   }
 }
-document.getElementById('pwdIn').addEventListener('keypress',e=>{if(e.key==='Enter')tryUnlock();});
 
-/* ── SHOW WELCOME ── */
-function showWelcome(){
-  activeSection=null;
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('panel').innerHTML=`<br><br>
-    <div class="welcome">
-      <div class="vault-3d">
-        <div class="vault-cube">
-          <div class="face front">📚</div><div class="face back">🔐</div>
-          <div class="face left">📖</div><div class="face right">✨</div>
-          <div class="face top">🏆</div><div class="face bottom">🎓</div>
-        </div>
-      </div><br>
-      <h2>Welcome to Study Vault</h2>
-      <p>Tap a subject below to get started.</p>
-      <div class="key-pill">🔑 Passwords: Contact </div>
-      <div style="display:flex;gap:10px;margin-top:5px;">
-      <a class="key-pill" style="text-decoration:none;" href="tel:+6379075447" class="phone-number">Seshan: 6379075447</a>
-      <a class="key-pill" style="text-decoration:none;" href="tel:+6383340975" class="phone-number">Vidhya: 6383340975</a>
-    </div>`;
+// Helper function to escape HTML
+function escapeHtml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
-/* ── SHOW SECTION ── */
-
+function showWelcome(){
+  activeSection=null;
+  const navBtns = document.querySelectorAll('.nav-btn');
+  navBtns.forEach(b=>b.classList.remove('active'));
+  const panel = document.getElementById('panel');
+  if(panel){
+    panel.innerHTML=`<br><br>
+      <div class="welcome">
+        <div class="vault-3d">
+          <div class="vault-cube">
+            <div class="face front">📚</div><div class="face back">🔐</div>
+            <div class="face left">📖</div><div class="face right">✨</div>
+            <div class="face top">🏆</div><div class="face bottom">🎓</div>
+          </div>
+        </div><br>
+        <h2>Welcome to Study Vault</h2>
+        <p>Tap a subject below to get started.</p>
+        <div class="key-pill">🔑 Passwords: Contact</div>
+        <div style="display:flex;gap:10px;margin-top:5px;flex-wrap:wrap;justify-content:center;">
+          <a class="key-pill" style="text-decoration:none;" href="tel:+6379075447">Seshan: 6379075447</a>
+          <a class="key-pill" style="text-decoration:none;" href="tel:+6383340975">Vidhya: 6383340975</a>
+        </div>
+      </div>`;
+  }
+}
 
 const UNIT_ICONS=['📐','⚗️','💻','🖊️','🗿','💹'];
 
 function showSection(id){
+  if(!id) return;
   activeSection=id;
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById(`nb${id}`).classList.add('active');
+  
+  const navBtns = document.querySelectorAll('.nav-btn');
+  navBtns.forEach(b=>b.classList.remove('active'));
+  const currentNav = document.getElementById(`nb${id}`);
+  if(currentNav) currentNav.classList.add('active');
 
   const s=SECTIONS[id-1];
-  const icon=UNIT_ICONS[id-1];
+  if(!s){
+    console.error(`Section ${id} not found`);
+    showWelcome();
+    return;
+  }
+  
   const syllabusImg=getConfiguredSyllabusImage(id);
 
   let unitsHtml='';
-  s.units.forEach((u,i)=>{
-    const pdfUrl=getConfiguredPdfUrl(id,i);
-    unitsHtml+=`
-      <div class="unit-card" onclick="openViewer('${pdfUrl}','pdf','${s.subject} – Unit ${i+1}')">
-        <div class="unit-num">
-          <span class="unit-num-text">Unit ${String(i+1).padStart(2,'0')}</span>
-          <div class="unit-dot"></div>
-        </div>
-        <div class="unit-body">
-          
-          <div class="unit-name">${u}</div>
-          <span class="unit-cta">▶ Open PDF</span>
-        </div>
-      </div>`;
-  });
+  if(s.units && s.units.length){
+    s.units.forEach((u,i)=>{
+      const pdfUrl=getConfiguredPdfUrl(id,i);
+      unitsHtml+=`
+        <div class="unit-card" onclick="openViewer('${pdfUrl}','pdf','${escapeHtml(s.subject)} – Unit ${i+1}')">
+          <div class="unit-num">
+            <span class="unit-num-text">Unit ${String(i+1).padStart(2,'0')}</span>
+            <div class="unit-dot"></div>
+          </div>
+          <div class="unit-body">
+            <div class="unit-name">${escapeHtml(u)}</div>
+            <span class="unit-cta">▶ Open PDF</span>
+          </div>
+        </div>`;
+    });
+  } else {
+    unitsHtml='<div class="error-message">No units available for this section.</div>';
+  }
 
-  document.getElementById('panel').innerHTML=`
-    <div>
-      <div class="section-header">
-        <span class="section-title">${s.subject}</span>
-        <button class="btn-back" onclick="showWelcome()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-          Back
-        </button>
-      </div>
+  const panel = document.getElementById('panel');
+  if(panel){
+    panel.innerHTML=`
+      <div>
+        <div class="section-header">
+          <span class="section-title">${escapeHtml(s.subject)}</span>
+          <button class="btn-back" onclick="showWelcome()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+        </div>
 
-      <div class="syllabus-3d" onclick="openViewer('${syllabusImg}','image','Syllabus – ${s.subject}')">
-        <div class="syllabus-inner">
-          <div class="syllabus-img-wrap"><img src="${syllabusImg}" alt="Syllabus"></div>
-          <div class="syllabus-info">
-            <h3>Course Syllabus</h3>
-            <span class="open-tag">👁 Tap to view syllabus</span>
+        <div class="syllabus-3d" onclick="openViewer('${syllabusImg}','image','Syllabus – ${escapeHtml(s.subject)}')">
+          <div class="syllabus-inner">
+            <div class="syllabus-img-wrap"><img src="${syllabusImg}" alt="Syllabus" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23275b73\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ENo Syllabus Image%3C/text%3E%3C/svg%3E'"></div>
+            <div class="syllabus-info">
+              <h3>Course Syllabus</h3>
+              <span class="open-tag">👁 Tap to view syllabus</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="units-label">Study Units — ${s.units.length} Modules</div>
-      <div class="units-grid">${unitsHtml}</div>
-    </div>`;
-}
-
-/* ── VIEWER ── */
-function openViewer(url,type,title){
-  document.getElementById('vTitle').textContent=title;
-  const body=document.getElementById('vBody');
-  body.innerHTML='';
-  if(type==='image'){
-    body.style.background='#1a2a36';
-    const w=document.createElement('div');w.className='img-wrap';
-    const img=document.createElement('img');img.src=url;
-    img.oncontextmenu=()=>false;img.draggable=false;
-    w.appendChild(img);body.appendChild(w);
-  } else {
-    body.style.background='#fff';
-    const fr=document.createElement('iframe');
-    fr.src=url;fr.oncontextmenu=()=>false;
-    body.appendChild(fr);
+        <div class="units-label">Study Units — ${s.units ? s.units.length : 0} Modules</div>
+        <div class="units-grid">${unitsHtml}</div>
+      </div>`;
   }
-  body.oncontextmenu=()=>false;
-  document.getElementById('viewer').classList.add('active');
-  document.body.style.overflow='hidden';
 }
+
+function openViewer(url, type, title){
+  const vTitle = document.getElementById('vTitle');
+  const vBody = document.getElementById('vBody');
+  const viewer = document.getElementById('viewer');
+  
+  if(vTitle) vTitle.textContent = title;
+  if(vBody){
+    vBody.innerHTML='';
+    if(type==='image'){
+      vBody.style.background='#1a2a36';
+      const w=document.createElement('div');
+      w.className='img-wrap';
+      const img=document.createElement('img');
+      img.src=url;
+      img.onerror=function(){
+        this.src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23275b73'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16'%3EImage not available%3C/text%3E%3C/svg%3E";
+      };
+      img.oncontextmenu=()=>false;
+      img.draggable=false;
+      w.appendChild(img);
+      vBody.appendChild(w);
+    } else {
+      vBody.style.background='#fff';
+      const fr=document.createElement('iframe');
+      fr.src=url;
+      fr.onerror=function(){
+        vBody.innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:1rem;color:#666;"><span style="font-size:3rem;">📄</span><p>PDF failed to load. The file might be missing or inaccessible.</p><small style="color:#999;">Please check the file path or contact support.</small></div>';
+      };
+      fr.oncontextmenu=()=>false;
+      vBody.appendChild(fr);
+    }
+    vBody.oncontextmenu=()=>false;
+  }
+  if(viewer){
+    viewer.classList.add('active');
+    document.body.style.overflow='hidden';
+  }
+}
+
 function closeViewer(){
-  document.getElementById('viewer').classList.remove('active');
-  document.getElementById('vBody').innerHTML='';
+  const viewer = document.getElementById('viewer');
+  const vBody = document.getElementById('vBody');
+  if(viewer) viewer.classList.remove('active');
+  if(vBody) vBody.innerHTML='';
   document.body.style.overflow='';
 }
-window.openViewer=openViewer;
-window.closeViewer=closeViewer;
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeViewer();closeModal();}});
 
-/* ── INIT ── */
+// Event listeners
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){
+    closeViewer();
+    closeModal();
+  }
+});
+
+// Password input enter key
+const pwdInput = document.getElementById('pwdIn');
+if(pwdInput){
+  pwdInput.addEventListener('keypress', e=>{
+    if(e.key==='Enter') tryUnlock();
+  });
+}
+
+// Make functions global
+window.openViewer = openViewer;
+window.closeViewer = closeViewer;
+window.showWelcome = showWelcome;
+window.tryUnlock = tryUnlock;
+window.closeModal = closeModal;
+
+// Initialize
 buildNav();
 showWelcome();
