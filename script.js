@@ -22,8 +22,8 @@ const USER_CONFIG = {
 
   // ── SYLLABUS IMAGES (one per section) ──────────────────────────
   syllabusImages: {
-    1: "s2.jpeg",
-    2: "s1.jpeg",
+    1: "m4/m4syllabus.jpeg",
+    2: "mpmc/mpmcsyllabus.jpeg",
     3: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%231f7a8c'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E💻 COMPUTER SCIENCE%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EAlgorithms, Data Structures, AI%3C/text%3E%3C/svg%3E",
     4: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%238b5a2b'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📖 LITERATURE SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EPoetry, Prose, Drama%3C/text%3E%3C/svg%3E",
     5: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%234a5d23'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E🏛️ HISTORY SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EAncient, Medieval, Modern%3C/text%3E%3C/svg%3E",
@@ -34,19 +34,17 @@ const USER_CONFIG = {
   pdfFiles: {
     // ── Section 1 : Mathematics ─────────────────────────────────
     1: {
-      0: "resume.pdf",                                                              // Unit 1
-      1: "https://www.orimi.com/pdf-test.pdf",                                                // Unit 2
-      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",              // Unit 3
-      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",            // Unit 4
-      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"                   // Unit 5
+      0: "m4/unit1.pdf",                                                              
+      1: "m4/unit2.pdf",                                               
+      2: "m4/unit3,4,5.pdf",                 
     },
     // ── Section 2 : Physics ─────────────────────────────────────
     2: {
-      0: "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",          // Unit 1
-      1: "https://www.orimi.com/pdf-test.pdf",                                                // Unit 2
-      2: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",              // Unit 3
-      3: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",            // Unit 4
-      4: "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf"                   // Unit 5
+      0: "mpmc/MPMC unit-1.pdf",          
+      1: "mpmc/MPMC UNIT-2.pdf",                                              
+      2: "mpmc/MPMC unit-3.pdf",             
+      3: "mpmc/MPMC unit-4.pdf",            
+      4: "mpmc/MPMC UNIT-5.pdf"                
     },
     // ── Section 3 : Computer Science ────────────────────────────
     3: {
@@ -111,12 +109,12 @@ function getConfiguredSyllabusImage(sectionId) {
 
 /* ── SECTION META ── */
 const SECTIONS = [
-  { id:1, label:'Math',    icon:'math',    color:'#6ab4ff', subject:'Mathematics',   sub:'Calculus · Algebra · Statistics',   units:['Calculus','Algebra','Statistics','Trigonometry','Geometry'] },
-  { id:2, label:'Physics', icon:'physics', color:'#78dca0', subject:'Physics',        sub:'Mechanics · Thermo · Optics',       units:['Mechanics','Thermodynamics','Optics','Electro','Quantum'] },
-  { id:3, label:'CS',      icon:'cs',      color:'#ffb450', subject:'Computer Sci.',  sub:'Algorithms · Data · AI',            units:['Algorithms','Data Structs','Networks','Databases','AI/ML'] },
-  { id:4, label:'Lit',     icon:'lit',     color:'#dc78c8', subject:'Literature',     sub:'Poetry · Prose · Drama',            units:['Poetry','Prose','Drama','Criticism','Comparative'] },
-  { id:5, label:'History', icon:'hist',    color:'#50c8e6', subject:'History',        sub:'Ancient · Medieval · Modern',       units:['Ancient','Medieval','Renaissance','Modern','Contemporary'] },
-  { id:6, label:'Econ',    icon:'econ',    color:'#ff7864', subject:'Economics',      sub:'Micro · Macro · Finance',           units:['Microeconomics','Macroeconomics','Trade','Finance','Policy'] },
+  { id:1, label:'M-4',    icon:'math',    color:'#6ab4ff', subject:'M-4',               units:['Unit 1','Unit 2','Unit 3, 4, 5'] },
+  { id:2, label:'MPMC', icon:'physics', color:'#78dca0', subject:'MPMC',                units:['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'] },
+  { id:3, label:'CS',      icon:'cs',      color:'#ffb450', subject:'Computer Sci.',    units:['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'] },
+  { id:4, label:'Lit',     icon:'lit',     color:'#dc78c8', subject:'Literature',       units:['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'] },
+  { id:5, label:'History', icon:'hist',    color:'#50c8e6', subject:'History',          units:['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'] },
+  { id:6, label:'Econ',    icon:'econ',    color:'#ff7864', subject:'Economics',        units:['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'] },
 ];
 
 const PASSWORDS = {1:'pass1',2:'pass2',3:'pass3',4:'pass4',5:'pass5',6:'pass6'};
@@ -199,7 +197,7 @@ function tryUnlock(){
     closeModal();
     showSection(pendingId);
   } else {
-    document.getElementById('errMsg').textContent=`❌ Wrong password. Hint: pass${pendingId}`;
+    document.getElementById('errMsg').textContent=`❌ Wrong password. Hint: Contact Seshan or Vidhya.`;
     document.getElementById('pwdIn').value='';
     document.getElementById('pwdIn').focus();
   }
@@ -210,7 +208,7 @@ document.getElementById('pwdIn').addEventListener('keypress',e=>{if(e.key==='Ent
 function showWelcome(){
   activeSection=null;
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('panel').innerHTML=`
+  document.getElementById('panel').innerHTML=`<br><br>
     <div class="welcome">
       <div class="vault-3d">
         <div class="vault-cube">
@@ -218,10 +216,13 @@ function showWelcome(){
           <div class="face left">📖</div><div class="face right">✨</div>
           <div class="face top">🏆</div><div class="face bottom">🎓</div>
         </div>
-      </div>
+      </div><br>
       <h2>Welcome to Study Vault</h2>
-      <p>Six secure sections protected by individual passwords. Tap a subject below to get started.</p>
-      <div class="key-pill">🔑 Default passwords: pass1 – pass6</div>
+      <p>Tap a subject below to get started.</p>
+      <div class="key-pill">🔑 Passwords: Contact </div>
+      <div style="display:flex;gap:10px;margin-top:5px;">
+      <a class="key-pill" style="text-decoration:none;" href="tel:+6379075447" class="phone-number">Seshan: 6379075447</a>
+      <a class="key-pill" style="text-decoration:none;" href="tel:+6383340975" class="phone-number">Vidhya: 6383340975</a>
     </div>`;
 }
 
@@ -249,7 +250,7 @@ function showSection(id){
           <div class="unit-dot"></div>
         </div>
         <div class="unit-body">
-          <span class="unit-icon">${icon}</span>
+          
           <div class="unit-name">${u}</div>
           <span class="unit-cta">▶ Open PDF</span>
         </div>
@@ -271,8 +272,7 @@ function showSection(id){
           <div class="syllabus-img-wrap"><img src="${syllabusImg}" alt="Syllabus"></div>
           <div class="syllabus-info">
             <h3>Course Syllabus</h3>
-            <p>${s.sub}</p>
-            <span class="open-tag">👁 Tap to view securely</span>
+            <span class="open-tag">👁 Tap to view syllabus</span>
           </div>
         </div>
       </div>
