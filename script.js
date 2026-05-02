@@ -143,12 +143,12 @@ const SECTIONS = [
 ];
 
 const PASSWORDS = {
-  1: "pass1",
-  2: "pass2",
-  3: "pass3",
-  4: "pass4",
-  5: "pass5",
-  6: "pass6",
+  1: "m4passv",
+  2: "mpmcpasss",
+  3: "acpassg",
+  4: "emfpassi",
+  5: "evspasst",
+  6: "licpassn",
 };
 const UNLOCKED = {};
 let activeSection = null;
@@ -266,8 +266,8 @@ function showWelcome() {
       <div class="welcome">
         <div class="vault-3d">
           <div class="vault-cube">
-            <div class="face front">📚</div><div class="face back">🔐</div>
-            <div class="face left">📖</div><div class="face right">✨</div>
+            <div class="face front">📚</div><div class="face back">📋</div>
+            <div class="face left">📖</div><div class="face right">📒</div>
             <div class="face top">🏆</div><div class="face bottom">🎓</div>
           </div>
         </div><br>
