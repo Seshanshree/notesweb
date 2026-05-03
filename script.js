@@ -15,6 +15,7 @@ const USER_CONFIG = {
     4: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%238b5a2b'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📖 LITERATURE SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EPoetry, Prose, Drama%3C/text%3E%3C/svg%3E",
     5: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%234a5d23'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E🏛️ HISTORY SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EAncient, Medieval, Modern%3C/text%3E%3C/svg%3E",
     6: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%239c6e3e'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📊 ECONOMICS SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EMicro, Macro, Trade%3C/text%3E%3C/svg%3E",
+    7: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23736e6e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📄 OLD QUESTION PAPERS%3C/text%3E%3C/svg%3E",
   },
 
   // ── PDF FILES (5 units per section, unitIndex 0 = Unit 1) ──────
@@ -57,6 +58,9 @@ const USER_CONFIG = {
       3: "",
       4: "",
     },
+    7: {
+      0: "oldqp.pdf",
+    },
   },
 };
 
@@ -65,11 +69,11 @@ const USER_CONFIG = {
 // ╚══════════════════════════════════════════════════════════════════╝
 
 const FALLBACK_PDFS = [
-  "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-  "https://www.orimi.com/pdf-test.pdf",
-  "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
-  "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
-  "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf",
+  // "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+  // "https://www.orimi.com/pdf-test.pdf",
+  // "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
+  // "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
+  // "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf",
 ];
 
 function getConfiguredPdfUrl(sectionId, unitIndex) {
@@ -110,7 +114,7 @@ const SECTIONS = [
     icon: "cs",
     color: "#ffb450",
     subject: "AC",
-    units: ["Unit:  1, 2, 3, 5 "],
+    units: ["Unit:  1, 2, 3, 4, 5 "],
   },
   {
     id: 4,
@@ -136,6 +140,14 @@ const SECTIONS = [
     subject: "LIC",
     units: ["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5"],
   },
+  {
+    id: 7,
+    label: "Old QP",
+    icon: "lit",
+    color: "#ff7864",
+    subject: "Old QP",
+    units: ["6 Papers"],
+  },
 ];
 
 const PASSWORDS = {
@@ -145,6 +157,7 @@ const PASSWORDS = {
   4: "emfpassi",
   5: "evspasst",
   6: "licpassn",
+  7: "oldqppassd",
 };
 const UNLOCKED = {};
 let activeSection = null;
@@ -262,9 +275,9 @@ function showWelcome() {
       <div class="welcome">
         <div class="vault-3d">
           <div class="vault-cube">
-            <div class="face front">📚</div><div class="face back">📋</div>
-            <div class="face left">📖</div><div class="face right">📒</div>
-            <div class="face top">🏆</div><div class="face bottom">🎓</div>
+            <div class="face front">📚</div><div class="face back">🏆</div>
+            <div class="face left">🎓</div><div class="face right">📒</div>
+            <div class="face top">📋</div><div class="face bottom">📖</div>
           </div>
         </div><br>
         <h2>Welcome to Study Vault</h2>
