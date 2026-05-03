@@ -152,7 +152,7 @@ const SECTIONS = [
 
 const PASSWORDS = {
   1: "m4passv",
-  2: "mpmcpasss",
+  2: "mpmcpassss",
   3: "acpassg",
   4: "emfpassi",
   5: "evspasst",
