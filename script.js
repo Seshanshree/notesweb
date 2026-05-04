@@ -1,13 +1,5 @@
-
-
-
-// ╔══════════════════════════════════════════════════════════════════╗
-// ║          USER FILE CONFIGURATION — EDIT THIS SECTION           ║
-// ║  Add your own syllabus images and PDF file paths here          ║
-// ╚══════════════════════════════════════════════════════════════════╝
-
+// ---------- USER CONFIG (unchanged) ----------
 const USER_CONFIG = {
-  // ── SYLLABUS IMAGES (one per section) ──────────────────────────
   syllabusImages: {
     1: "m4/m4syllabus.jpeg",
     2: "mpmc/mpmcsyllabus.jpeg",
@@ -17,8 +9,6 @@ const USER_CONFIG = {
     6: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%239c6e3e'/%3E%3Ctext x='50%25' y='40%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📊 ECONOMICS SYLLABUS%3C/text%3E%3Ctext x='50%25' y='65%25' dominant-baseline='middle' text-anchor='middle' fill='%23FDFFA9' font-size='14'%3EMicro, Macro, Trade%3C/text%3E%3C/svg%3E",
     7: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23736e6e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📄 OLD QUESTION PAPERS%3C/text%3E%3C/svg%3E",
   },
-
-  // ── PDF FILES (5 units per section, unitIndex 0 = Unit 1) ──────
   pdfFiles: {
     1: {
       0: "m4/unit-1.pdf",
@@ -34,63 +24,27 @@ const USER_CONFIG = {
       3: "mpmc/MPMC unit-4.pdf",
       4: "mpmc/MPMC UNIT-5.pdf",
     },
-    3: {
-      0: "ac/ac 12345.pdf"
-    },
-    4: {
-      0: "",
-      1: "",
-      2: "",
-      3: "",
-      4: "",
-    },
-    5: {
-      0: "",
-      1: "",
-      2: "",
-      3: "",
-      4: "",
-    },
-    6: {
-      0: "",
-      1: "",
-      2: "",
-      3: "",
-      4: "",
-    },
-    7: {
-      0: "oldqp.pdf",
-    },
+    3: { 0: "ac/ac 12345.pdf" },
+    4: { 0: "", 1: "", 2: "", 3: "", 4: "" },
+    5: { 0: "", 1: "", 2: "", 3: "", 4: "" },
+    6: { 0: "", 1: "", 2: "", 3: "", 4: "" },
+    7: { 0: "oldqp.pdf" },
   },
 };
-
-// ╔══════════════════════════════════════════════════════════════════╗
-// ║              END OF USER CONFIGURATION                         ║
-// ╚══════════════════════════════════════════════════════════════════╝
-
-const FALLBACK_PDFS = [
-  // "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-  // "https://www.orimi.com/pdf-test.pdf",
-  // "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/helloworld.pdf",
-  // "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/basic-link-1.pdf",
-  // "https://www.antennahouse.com/hubfs/xsl-fo-sample/pdf/tables.pdf",
-];
-
-function getConfiguredPdfUrl(sectionId, unitIndex) {
-  return USER_CONFIG.pdfFiles[sectionId] &&
-    USER_CONFIG.pdfFiles[sectionId][unitIndex]
-    ? USER_CONFIG.pdfFiles[sectionId][unitIndex]
-    : FALLBACK_PDFS[unitIndex % FALLBACK_PDFS.length];
+const FALLBACK_PDFS = [];
+function getConfiguredPdfUrl(sid, idx) {
+  return (
+    USER_CONFIG.pdfFiles[sid]?.[idx] ||
+    FALLBACK_PDFS[idx % FALLBACK_PDFS.length] ||
+    ""
+  );
 }
-
-function getConfiguredSyllabusImage(sectionId) {
-  if (USER_CONFIG.syllabusImages[sectionId])
-    return USER_CONFIG.syllabusImages[sectionId];
-  return `data:image/svg+xml,${encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='#275b73'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18'>Section ${sectionId} Syllabus</text></svg>`,
-  )}`;
+function getConfiguredSyllabusImage(sid) {
+  return (
+    USER_CONFIG.syllabusImages[sid] ||
+    `data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='#275b73'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18'>Section ${sid} Syllabus</text></svg>`)}`
+  );
 }
-
 const SECTIONS = [
   {
     id: 1,
@@ -149,7 +103,6 @@ const SECTIONS = [
     units: ["6 Papers"],
   },
 ];
-
 const PASSWORDS = {
   1: "m4passv",
   2: "mpmcpassss",
@@ -160,22 +113,19 @@ const PASSWORDS = {
   7: "oldqppassd",
 };
 const UNLOCKED = {};
-let activeSection = null;
-let pendingId = null;
-
-// Stars generation
+let activeSection = null,
+  pendingId = null;
+// stars gen
 (function () {
   const c = document.getElementById("stars");
-  if (c) {
+  if (c)
     for (let i = 0; i < 80; i++) {
-      const s = document.createElement("span");
-      const sz = Math.random() * 2 + 0.5;
+      let s = document.createElement("span");
+      let sz = Math.random() * 2 + 0.5;
       s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random() * 100}%;left:${Math.random() * 100}%;--d:${2 + Math.random() * 4}s;--del:${Math.random() * 4}s;`;
       c.appendChild(s);
     }
-  }
 })();
-
 const NAV_ICONS = {
   math: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>`,
   physics: `<circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>`,
@@ -184,7 +134,6 @@ const NAV_ICONS = {
   hist: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
   econ: `<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>`,
 };
-
 function buildNav() {
   const nav = document.getElementById("bottom-nav");
   if (!nav) return;
@@ -193,17 +142,11 @@ function buildNav() {
     const btn = document.createElement("button");
     btn.className = `nav-btn s${s.id}`;
     btn.id = `nb${s.id}`;
-    btn.innerHTML = `
-      <div class="nav-icon-wrap">
-        <svg class="nav-svg" viewBox="0 0 24 24">${NAV_ICONS[s.icon]}</svg>
-        ${UNLOCKED[s.id] ? "" : `<span class="nav-badge">🔒</span>`}
-      </div>
-      <span class="nav-label">${s.label}</span>`;
+    btn.innerHTML = `<div class="nav-icon-wrap"><svg class="nav-svg" viewBox="0 0 24 24">${NAV_ICONS[s.icon]}</svg>${UNLOCKED[s.id] ? "" : `<span class="nav-badge">🔒</span>`}</div><span class="nav-label">${s.label}</span>`;
     btn.onclick = (e) => handleNav(s.id, e, btn);
     nav.appendChild(btn);
   });
 }
-
 function handleNav(id, e, btn) {
   const r = document.createElement("div");
   r.className = "ripple";
@@ -212,18 +155,12 @@ function handleNav(id, e, btn) {
   r.style.top = `${e.clientY - rect.top}px`;
   btn.appendChild(r);
   setTimeout(() => r.remove(), 600);
-
-  if (UNLOCKED[id]) {
-    showSection(id);
-  } else {
-    openModal(id);
-  }
+  if (UNLOCKED[id]) showSection(id);
+  else openModal(id);
 }
-
 function openModal(id) {
   pendingId = id;
   const s = SECTIONS[id - 1];
-  if (!s) return;
   document.getElementById("mHint").textContent =
     `🔒 ${s.subject} — Enter password`;
   document.getElementById("pwdIn").value = "";
@@ -231,21 +168,46 @@ function openModal(id) {
   document.getElementById("modal").classList.add("active");
   setTimeout(() => document.getElementById("pwdIn").focus(), 200);
 }
-
 function closeModal() {
-  const modal = document.getElementById("modal");
-  if (modal) modal.classList.remove("active");
+  document.getElementById("modal").classList.remove("active");
   pendingId = null;
 }
-
+// Show popup with corrected grammar
+function showUnlockPopup(subjectName) {
+  const popupDiv = document.createElement("div");
+  popupDiv.textContent = `✅ You unlocked the portal! Check the portal.`;
+  Object.assign(popupDiv.style, {
+    position: "fixed",
+    bottom: "100px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    background: "#d4a843",
+    color: "#1a0e00",
+    padding: "12px 24px",
+    borderRadius: "40px",
+    zIndex: "10001",
+    fontSize: "14px",
+    fontWeight: "500",
+    fontFamily: "'Outfit', sans-serif",
+    boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+    animation: "fadeOut 3s forwards",
+    pointerEvents: "none",
+  });
+  document.body.appendChild(popupDiv);
+  setTimeout(() => {
+    if (popupDiv && popupDiv.remove) popupDiv.remove();
+  }, 3000);
+}
 function tryUnlock() {
   const pwd = document.getElementById("pwdIn").value;
   if (PASSWORDS[pendingId] === pwd) {
     UNLOCKED[pendingId] = true;
     const badge = document.querySelector(`#nb${pendingId} .nav-badge`);
     if (badge) badge.remove();
+    const subj = SECTIONS.find((s) => s.id === pendingId)?.subject || "Subject";
     closeModal();
     showSection(pendingId);
+    showUnlockPopup(subj);
   } else {
     document.getElementById("errMsg").textContent =
       `❌ Wrong password. Hint: Contact Seshan or Vidhya.`;
@@ -253,208 +215,76 @@ function tryUnlock() {
     document.getElementById("pwdIn").focus();
   }
 }
-
-// Helper function to escape HTML
-function escapeHtml(str) {
-  if (!str) return "";
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function showWelcome() {
-  activeSection = null;
-  const navBtns = document.querySelectorAll(".nav-btn");
-  navBtns.forEach((b) => b.classList.remove("active"));
-  const panel = document.getElementById("panel");
-  if (panel) {
-    panel.innerHTML = `<br><br>
-      <div class="welcome">
-        <div class="vault-3d">
-          <div class="vault-cube">
-            <div class="face front">📚</div><div class="face back">🏆</div>
-            <div class="face left">🎓</div><div class="face right">📒</div>
-            <div class="face top">📋</div><div class="face bottom">📖</div>
-          </div>
-        </div><br>
-        <h2>Welcome to Study Vault</h2>
-        <p>Tap a subject below to get started.</p>
-        <div class="key-pill">🔑 Passwords: Contact</div>
-        <div style="display:flex;gap:10px;margin-top:5px;flex-wrap:wrap;justify-content:center;">
-          <a class="key-pill" style="text-decoration:none;" href="tel:+6379075447">Seshan: 6379075447</a>
-          <a class="key-pill" style="text-decoration:none;" href="tel:+6383340975">Vidhya: 6383340975</a>
-        </div>
-      </div>`;
-  }
-}
-
-const UNIT_ICONS = ["📐", "⚗️", "💻", "🖊️", "🗿", "💹"];
-
-// DOWNLOAD SYLLABUS FUNCTION - WORKING VERSION
-function downloadSyllabus(url, subject) {
-  // Clean the subject name for filename
-  const cleanSubject = subject.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-  
-  // For data URLs (SVG placeholders and base64 images)
-  if (url.startsWith('data:')) {
-    const link = document.createElement('a');
-    link.href = url;
-    const extension = url.includes('svg') ? 'svg' : 'png';
-    link.download = `${cleanSubject}_syllabus.${extension}`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    showDownloadNotification('Syllabus downloaded successfully!');
+function downloadPDF(url, filename) {
+  if (!url || url === "") {
+    showNotification("PDF not available", true);
     return;
   }
-  
-  // For local/remote image URLs
   fetch(url)
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.blob();
+    .then((res) => {
+      if (!res.ok) throw new Error();
+      return res.blob();
     })
-    .then(blob => {
-      const blobUrl = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      // Get filename from URL or use default
-      const filename = url.split('/').pop() || `${cleanSubject}_syllabus.jpg`;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(blobUrl);
-      showDownloadNotification('Syllabus downloaded successfully!');
+    .then((blob) => {
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = filename.endsWith(".pdf") ? filename : filename + ".pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
+      showNotification("PDF downloaded!", false);
     })
-    .catch(error => {
-      console.error('Error downloading syllabus:', error);
-      // Fallback: open in new tab
-      window.open(url, '_blank');
-      showDownloadNotification('Opening in new tab. Right-click to save.', true);
+    .catch(() => {
+      window.open(url, "_blank");
+      showNotification("Opening PDF in new tab (right-click to save)", true);
     });
 }
-
-function showDownloadNotification(message, isWarning = false) {
-  const msg = document.createElement('div');
-  msg.textContent = message;
-  msg.style.cssText = `
-    position: fixed;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: ${isWarning ? '#ff7864' : '#d4a843'};
-    color: #1a0e00;
-    padding: 12px 24px;
-    border-radius: 40px;
-    z-index: 10000;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Outfit', sans-serif;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    animation: fadeOut 3s forwards;
-    pointer-events: none;
-  `;
-  document.body.appendChild(msg);
-  setTimeout(() => {
-    if (msg && msg.remove) msg.remove();
-  }, 3000);
+function showNotification(msg, isWarn = false) {
+  const div = document.createElement("div");
+  div.textContent = msg;
+  div.style.cssText = `position:fixed; bottom:130px; left:50%; transform:translateX(-50%); background:${isWarn ? "#ff7864" : "#d4a843"}; color:#1a0e00; padding:10px 20px; border-radius:40px; z-index:10000; font-size:13px; font-family:'Outfit',sans-serif; box-shadow:0 4px 15px rgba(0,0,0,0.3); animation:fadeOut 2.5s forwards; pointer-events:none`;
+  document.body.appendChild(div);
+  setTimeout(() => div.remove(), 2500);
 }
-
-function showSection(id) {
-  if (!id) return;
-  activeSection = id;
-
-  const navBtns = document.querySelectorAll(".nav-btn");
-  navBtns.forEach((b) => b.classList.remove("active"));
-  const currentNav = document.getElementById(`nb${id}`);
-  if (currentNav) currentNav.classList.add("active");
-
-  const s = SECTIONS[id - 1];
-  if (!s) {
-    console.error(`Section ${id} not found`);
-    showWelcome();
+function downloadSyllabus(url, subject) {
+  const clean = subject.replace(/[^a-z0-9]/gi, "_").toLowerCase();
+  if (url.startsWith("data:")) {
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${clean}_syllabus.${url.includes("svg") ? "svg" : "png"}`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showNotification("Syllabus image saved", false);
     return;
   }
-
-  const syllabusImg = getConfiguredSyllabusImage(id);
-
-  let unitsHtml = "";
-  if (s.units && s.units.length) {
-    s.units.forEach((u, i) => {
-      const pdfUrl = getConfiguredPdfUrl(id, i);
-      if (pdfUrl && pdfUrl !== "") {
-        unitsHtml += `
-          <div class="unit-card" onclick="openViewer('${pdfUrl}','pdf','${escapeHtml(s.subject)} – Unit ${i + 1}')">
-            <div class="unit-num">
-              <span class="unit-num-text">Unit ${String(i + 1).padStart(2, "0")}</span>
-              <div class="unit-dot"></div>
-            </div>
-            <div class="unit-body">
-              <div class="unit-name">${escapeHtml(u)}</div>
-              <span class="unit-cta">▶ Open PDF</span>
-            </div>
-          </div>`;
-      } else {
-        unitsHtml += `
-          <div class="unit-card disabled" style="opacity:0.6; cursor:not-allowed;">
-            <div class="unit-num">
-              <span class="unit-num-text">Unit ${String(i + 1).padStart(2, "0")}</span>
-              <div class="unit-dot"></div>
-            </div>
-            <div class="unit-body">
-              <div class="unit-name">${escapeHtml(u)}</div>
-              <span class="unit-cta" style="color:#888;">🔒 Coming Soon</span>
-            </div>
-          </div>`;
-      }
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) throw new Error();
+      return res.blob();
+    })
+    .then((blob) => {
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = url.split("/").pop() || `${clean}_syllabus.jpg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
+      showNotification("Syllabus downloaded", false);
+    })
+    .catch(() => {
+      window.open(url, "_blank");
+      showNotification("Opening syllabus in new tab", true);
     });
-  } else {
-    unitsHtml =
-      '<div class="error-message">No units available for this section.</div>';
-  }
-
-  const panel = document.getElementById("panel");
-  if (panel) {
-    panel.innerHTML = `
-      <div>
-        <div class="section-header">
-          <span class="section-title">${escapeHtml(s.subject)}</span>
-          <button class="btn-back" onclick="showWelcome()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-            Back
-          </button>
-        </div>
-
-        <div class="syllabus-3d">
-          <div class="syllabus-inner">
-            <div class="syllabus-img-wrap" onclick="openViewer('${syllabusImg}','image','Syllabus – ${escapeHtml(s.subject)}')">
-              <img src="${syllabusImg}" alt="Syllabus" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23275b73\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ENo Syllabus Image%3C/text%3E%3C/svg%3E'">
-            </div>
-            <div class="syllabus-info">
-              <h3>Course Syllabus</h3>
-              <div style="display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap;">
-                <span class="open-tag" onclick="event.stopPropagation(); openViewer('${syllabusImg}','image','Syllabus – ${escapeHtml(s.subject)}')">👁 View</span>
-                <span class="open-tag" onclick="event.stopPropagation(); downloadSyllabus('${syllabusImg}', '${escapeHtml(s.subject)}')">⬇ Download</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="units-label">Study Units — ${s.units ? s.units.length : 0} Modules</div>
-        <div class="units-grid">${unitsHtml}</div>
-      </div>`;
-  }
 }
-
 function openViewer(url, type, title) {
   const vTitle = document.getElementById("vTitle");
   const vBody = document.getElementById("vBody");
   const viewer = document.getElementById("viewer");
-
   if (vTitle) vTitle.textContent = title;
   if (vBody) {
     vBody.innerHTML = "";
@@ -468,61 +298,94 @@ function openViewer(url, type, title) {
         this.src =
           "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23275b73'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='16'%3EImage not available%3C/text%3E%3C/svg%3E";
       };
-      img.oncontextmenu = () => false;
-      img.draggable = false;
       w.appendChild(img);
       vBody.appendChild(w);
     } else {
       vBody.style.background = "#fff";
       const fr = document.createElement("iframe");
       fr.src = url;
-      fr.onerror = function () {
+      fr.onerror = () => {
         vBody.innerHTML =
-          '<div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:1rem;color:#666;"><span style="font-size:3rem;">📄</span><p>PDF failed to load. The file might be missing or inaccessible.</p><small style="color:#999;">Please check the file path or contact support.</small></div>';
+          '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#666;"><p>Failed to load PDF</p></div>';
       };
-      fr.oncontextmenu = () => false;
       vBody.appendChild(fr);
     }
-    vBody.oncontextmenu = () => false;
   }
   if (viewer) {
     viewer.classList.add("active");
     document.body.style.overflow = "hidden";
   }
 }
-
 function closeViewer() {
   const viewer = document.getElementById("viewer");
-  const vBody = document.getElementById("vBody");
   if (viewer) viewer.classList.remove("active");
-  if (vBody) vBody.innerHTML = "";
   document.body.style.overflow = "";
 }
-
-// Event listeners
+function showWelcome() {
+  activeSection = null;
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach((b) => b.classList.remove("active"));
+  const panel = document.getElementById("panel");
+  if (panel)
+    panel.innerHTML = `<br><br><div class="welcome"><div class="vault-3d"><div class="vault-cube"><div class="face front">📚</div><div class="face back">🏆</div><div class="face left">🎓</div><div class="face right">📒</div><div class="face top">📋</div><div class="face bottom">📖</div></div></div><br><h2>Welcome to Study Vault</h2><p>Tap a subject below to get started.</p><div class="key-pill">🔑 Passwords: Contact</div><div style="display:flex;gap:10px;margin-top:5px;flex-wrap:wrap;justify-content:center;"><a class="key-pill" style="text-decoration:none;" href="tel:+6379075447">Seshan: 6379075447</a><a class="key-pill" style="text-decoration:none;" href="tel:+6383340975">Vidhya: 6383340975</a></div></div>`;
+}
+function showSection(id) {
+  if (!id) return;
+  activeSection = id;
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach((b) => b.classList.remove("active"));
+  const curNav = document.getElementById(`nb${id}`);
+  if (curNav) curNav.classList.add("active");
+  const s = SECTIONS[id - 1];
+  const syllabusImg = getConfiguredSyllabusImage(id);
+  let unitsHtml = "";
+  if (s.units && s.units.length) {
+    s.units.forEach((u, i) => {
+      const pdfUrl = getConfiguredPdfUrl(id, i);
+      const hasValid = pdfUrl && pdfUrl !== "";
+      const safeSubject = escapeHtml(s.subject);
+      const unitNum = i + 1;
+      if (hasValid) {
+        unitsHtml += `<div class="unit-card" onclick="openViewer('${pdfUrl}','pdf','${safeSubject} – Unit ${unitNum}')"><div class="unit-num"><span class="unit-num-text">Unit ${String(unitNum).padStart(2, "0")}</span><div class="unit-dot"></div></div><div class="unit-body"><div class="unit-name">${escapeHtml(u)}</div><div class="unit-cta-group"><span class="unit-cta">▶ Open PDF</span><span class="download-pdf-btn" onclick="event.stopPropagation(); downloadPDF('${pdfUrl}','${safeSubject}_unit${unitNum}')">⬇ Download</span></div></div></div>`;
+      } else {
+        unitsHtml += `<div class="unit-card disabled" style="opacity:0.6; cursor:not-allowed;"><div class="unit-num"><span class="unit-num-text">Unit ${String(unitNum).padStart(2, "0")}</span><div class="unit-dot"></div></div><div class="unit-body"><div class="unit-name">${escapeHtml(u)}</div><span class="unit-cta" style="color:#888;">🔒 Coming Soon</span></div></div>`;
+      }
+    });
+  } else {
+    unitsHtml = '<div class="error-message">No units available.</div>';
+  }
+  const panel = document.getElementById("panel");
+  if (panel)
+    panel.innerHTML = `<div><div class="section-header"><span class="section-title">${escapeHtml(s.subject)}</span><button class="btn-back" onclick="showWelcome()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Back</button></div><div class="syllabus-3d"><div class="syllabus-inner"><div class="syllabus-img-wrap" onclick="openViewer('${syllabusImg}','image','Syllabus – ${escapeHtml(s.subject)}')"><img src="${syllabusImg}" alt="Syllabus" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23275b73\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'white\' font-size=\'18\'%3ENo Syllabus Image%3C/text%3E%3C/svg%3E'"></div><div class="syllabus-info"><h3>Course Syllabus</h3><div style="display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap;"><span class="open-tag" onclick="event.stopPropagation(); openViewer('${syllabusImg}','image','Syllabus – ${escapeHtml(s.subject)}')">👁 View</span><span class="open-tag" onclick="event.stopPropagation(); downloadSyllabus('${syllabusImg}', '${escapeHtml(s.subject)}')">⬇ Download</span></div></div></div></div><div class="units-label">Study Units — ${s.units.length} Modules</div><div class="units-grid">${unitsHtml}</div></div>`;
+}
+function escapeHtml(str) {
+  if (!str) return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeViewer();
     closeModal();
   }
 });
-
-// Password input enter key
 const pwdInput = document.getElementById("pwdIn");
-if (pwdInput) {
+if (pwdInput)
   pwdInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") tryUnlock();
   });
-}
-
-// Make functions global
 window.openViewer = openViewer;
 window.closeViewer = closeViewer;
 window.showWelcome = showWelcome;
 window.tryUnlock = tryUnlock;
 window.closeModal = closeModal;
 window.downloadSyllabus = downloadSyllabus;
-
-// Initialize
+window.downloadPDF = downloadPDF;
 buildNav();
 showWelcome();
