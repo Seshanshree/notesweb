@@ -1065,3 +1065,30 @@ body::before {
   color: var(--gold3);
   text-decoration: underline;
 }
+
+
+.download-pdf-btn {
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  background: rgba(212, 168, 67, 0.2);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  border-radius: 20px;
+  padding: 2px 7px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--gold2);
+}
+.download-pdf-btn:hover {
+  background: rgba(212, 168, 67, 0.4);
+  transform: scale(0.96);
+}
+.unit-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
