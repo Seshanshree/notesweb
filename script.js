@@ -16,6 +16,7 @@ const USER_CONFIG = {
       2: "m4/unit-3.pdf",
       3: "m4/unit-4.pdf",
       4: "m4/unit -5.pdf",
+      5: "m4/formulas.pdf",
     },
     2: {
       0: "mpmc/MPMC unit-1.pdf",
@@ -52,7 +53,7 @@ const SECTIONS = [
     icon: "math",
     color: "#6ab4ff",
     subject: "M-4",
-    units: ["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5"],
+    units: ["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5" , "Formulas"],
   },
   {
     id: 2,
