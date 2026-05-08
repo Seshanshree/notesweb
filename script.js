@@ -25,7 +25,7 @@ const USER_CONFIG = {
       3: "mpmc/MPMC unit-4.pdf",
       4: "mpmc/MPMC UNIT-5.pdf",
     },
-    3: { 0: "ac/ac 12345.pdf" },
+    3: { 0: "ac/ac 12345.pdf", 1: "ac/Unit II.pptx", 2: "ac/UNIT V.pptx", 3: "", 4: "" },
     4: { 0: "", 1: "", 2: "", 3: "", 4: "" },
     5: { 0: "", 1: "", 2: "", 3: "", 4: "" },
     6: { 0: "", 1: "", 2: "", 3: "", 4: "" },
@@ -69,7 +69,7 @@ const SECTIONS = [
     icon: "cs",
     color: "#ffb450",
     subject: "AC",
-    units: ["Unit:  1, 2, 3, 4, 5 "],
+    units: ["Unit:  1, 2, 3, 4, 5 ","Unit: 2 PPT","Unit: 5 PPT"],
   },
   {
     id: 4,
