@@ -1112,6 +1112,7 @@ body::before {
 /* ----------------------------------------------------------------------- */
 
 .d1{
+    cursor: pointer;
     margin: 10px auto;
     /* border: .01px solid red; */
     border-right: 2.5px double rgb(90, 79, 128);
@@ -1165,10 +1166,10 @@ h3{
     to{translate: -100%;}
 }
 @keyframes spinn{
-    0%{background-color: var(--navy3); border-radius: 20px 30px 40px 50px;}
-    50%{background-color: var(--gold2);border-radius: 50px 40px 30px 20px;}
-    80%{background-color: var(--navy);border-radius: 60px 50px 40px 20px;}
-    100%{background-color: var(--gold2);border-radius: 20px 40px 50px 60px;}
+    0%{background-color: var(--navy3); }
+    50%{background-color: var(--gold2);}
+    80%{background-color: var(--navy);}
+    100%{background-color: var(--gold2);}
 }
 @keyframes spinnn{
     0%{color: var(--navy3);}
