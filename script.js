@@ -329,7 +329,7 @@ function showWelcome() {
     .forEach((b) => b.classList.remove("active"));
   const panel = document.getElementById("panel");
   if (panel)
-    panel.innerHTML = `<br><br><div class="welcome"><div class="vault-3d"><div class="vault-cube"><div class="face front">📚</div><div class="face back">🏆</div><div class="face left">🎓</div><div class="face right">📒</div><div class="face top">📋</div><div class="face bottom">📖</div></div></div><br><h2>Welcome to Study Vault</h2><p>Tap a subject below to get started.</p><div class="key-pill">🔑 Passwords: Contact</div><div style="display:flex;gap:10px;margin-top:5px;flex-wrap:wrap;justify-content:center;"><a class="key-pill" style="text-decoration:none;" href="tel:+6379075447">Seshan: 6379075447</a><a class="key-pill" style="text-decoration:none;" href="tel:+6383340975">Vidhya: 6383340975</a></div></div>`;
+    panel.innerHTML = `<br><br><div class="welcome"><div class="vault-3d"><div class="vault-cube"><div class="face front">📚</div><div class="face back">🏆</div><div class="face left">🎓</div><div class="face right">📒</div><div class="face top">📋</div><div class="face bottom">📖</div></div></div><br><h2>Welcome to Study Vault</h2><p>Tap a subject below to get started.</p><div class="key-pill">🔑 Passwords: Contact</div><div style="display:flex;gap:10px;margin-top:5px;flex-wrap:wrap;justify-content:center;"><a class="key-pill" style="text-decoration:none;" href="https://wa.me/916379075447" target="_blank">Seshan: 6379075447</a><a class="key-pill" style="text-decoration:none;" href="https://wa.me/916383340975" target="_blank"">Vidhya: 6383340975</a></div></div>`;
 }
 function showSection(id) {
   if (!id) return;
