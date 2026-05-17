@@ -37,7 +37,8 @@ const USER_CONFIG = {
          5:"emf1/EC3452 Important.pdf",
          6:"emf1/EC3452 2Marks.pdf",
          7:"emf1/EC3452 Question Bank.pdf",
-         8:"emf1/EC3452-QP.pdf"
+         8:"emf1/EC3452-QP.pdf",
+        9:"emf1/unit-1"
     },
     5: { 0: "evs/GE3451 EVSS Civil.pdf", 
          1: "evs/EVS Chapter 2.pptx", 
@@ -97,7 +98,7 @@ const SECTIONS = [
     icon: "lit",
     color: "#dc78c8",
     subject: "EMF",
-    units: ["emf-total", "Electromagnetic Fields Lecture Notes 1", "Electromagnetic Fields Short Book", "EMF U-3", "EC3452 Formulae", "EC3452 Important", "EC3452 2Marks", "EC3452 Question Bank", "EC3452-QP"],
+    units: ["emf-total", "Electromagnetic Fields Lecture Notes 1", "Electromagnetic Fields Short Book", "EMF U-3", "EC3452 Formulae", "EC3452 Important", "EC3452 2Marks", "EC3452 Question Bank", "EC3452-QP", "unit-1"],
   },
   {
     id: 5,
