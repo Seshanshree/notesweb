@@ -38,7 +38,7 @@ const USER_CONFIG = {
          6:"emf1/EC3452 2Marks.pdf",
          7:"emf1/EC3452 Question Bank.pdf",
          8:"emf1/EC3452-QP.pdf",
-        9:"emf1/unit-1"
+        9:"emf1/unit-1.pdf"
     },
     5: { 0: "evs/GE3451 EVSS Civil.pdf", 
          1: "evs/EVS Chapter 2.pptx", 
