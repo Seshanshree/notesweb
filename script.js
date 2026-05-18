@@ -30,7 +30,7 @@ const USER_CONFIG = {
          2: "ac/UNIT V.pptx", 
     },
     4: { 0: "emf1/emf-total.pdf", 
-         1: "STUCOR_EC3452-EJ complete document",
+         1: "STUCOR_EC3452-EJ complete document.pdf",
          2:"emf1/unit-1.pdf",
          3:"unit-5.pdf",
          4: "emf1/Electromagnetic Fields Lecture Notes 1.pdf", 
