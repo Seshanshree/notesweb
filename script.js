@@ -6,7 +6,7 @@ const USER_CONFIG = {
     3: "ac/acsyllabus.jpeg",
     4: "emf1/emfsyllabus.jpeg",
     5: "evs/evssyllabus.jpeg",
-    6: "licfiles/licsyllabus.jpeg",
+    6: "licfiles/licsyllabus1.jpeg",
     7: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23736e6e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23FFE6B3' font-size='22'%3E📄 OLD QUESTION PAPERS%3C/text%3E%3C/svg%3E",
   },
   pdfFiles: {
