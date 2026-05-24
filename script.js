@@ -49,8 +49,7 @@ const USER_CONFIG = {
          4: "evs/EVS Chapter 5.pptx" },
     6: { 0: "licfiles/lic1.pdf", 
          1: "licfiles/lic2part1.pdf", 
-         2: "", 
-         3: "licfiles/lic 4,3.pdf"
+         2: "licfiles/lic 4,3.pdf"
        },
     7: { 0: "oldqp.pdf" },
   },
@@ -118,7 +117,7 @@ const SECTIONS = [
     icon: "econ",
     color: "#ff7864",
     subject: "LIC",
-    units: ["Unit 1", "Unit 2 Part 1", "Unit 2 Part 2", "Unit 4,3"],
+    units: ["Unit 1", "Unit 2", "Unit 4,3"],
   },
   {
     id: 7,
