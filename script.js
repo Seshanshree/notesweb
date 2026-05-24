@@ -50,8 +50,7 @@ const USER_CONFIG = {
     6: { 0: "licfiles/lic1.pdf", 
          1: "licfiles/lic2part1.pdf", 
          2: "licfiles/lic2part2.pdf", 
-         3: "licfiles/lic3.pdf",
-         4: "licfiles/lic4.pdf"
+         3: "licfiles/lic 4,3.pdf"
        },
     7: { 0: "oldqp.pdf" },
   },
@@ -119,7 +118,7 @@ const SECTIONS = [
     icon: "econ",
     color: "#ff7864",
     subject: "LIC",
-    units: ["Unit 1", "Unit 2 Part 1", "Unit 2 Part 2", "Unit 3", "Unit 4"],
+    units: ["Unit 1", "Unit 2 Part 1", "Unit 2 Part 2", "Unit 4,3"],
   },
   {
     id: 7,
